@@ -5,12 +5,12 @@
 const EVENT = {
   recipient: "Rekan Pemuda Muhammadiyah Tembok Luwung",
   number: "1.2/002/1448",
-  issueDate: "2026-10-14", // Format YYYY-MM-DD untuk tanggal pembuatan/surat
-  date: "2026-10-14", // Format YYYY-MM-DD untuk tanggal pelaksanaan acara
+  issueDate: "2026-10-08", // Format YYYY-MM-DD untuk tanggal pembuatan/surat
+  date: "2026-10-09", // Format YYYY-MM-DD untuk tanggal pelaksanaan acara
   day: "Jum’at Malam Sabtu",
-  time: "Pukul 20.15 WIB s/d Selesai",
-  place: "Masjid Al Hidayah Komplek Dagan",
-  speaker: "Ustadz Turachman, M.Pd.",
+  time: "Pukul 20.00 WIB s/d Selesai",
+  place: "Masjid Rukyatul Hilal",
+  speaker: "Ustadz Isa Herdiansyah",
   theme: "",
   maps: "https://maps.app.goo.gl/mtDw4DMYSrbQkcqV6"
 };
