@@ -41,15 +41,15 @@
       <div class="section-label"><span>01</span> SURAT UNDANGAN DIGITAL</div>
       <article class="letter-card">
         <div class="letter-head">
-        <div class="letter-logo">
-          <img
-            src="logopemuda.jpg"
-            alt="Logo Pemuda Muhammadiyah"
-            width="80"
-            height="80"
-            style="width: 80px; height: 80px; object-fit: contain;"
-          >
-        </div>
+          <div class="letter-logo">
+            <img
+              src="logopemuda.jpg"
+              alt="Logo Pemuda Muhammadiyah"
+              width="80"
+              height="80"
+              style="width: 80px; height: 80px; object-fit: contain;"
+            >
+          </div>
           <div class="letter-org">
             <h2>PIMPINAN RANTING<br>PEMUDA MUHAMMADIYAH</h2>
             <h3>TEMBOK LUWUNG</h3>
@@ -61,11 +61,19 @@
 
         <div class="letter-body">
           <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-          <div class="letter-meta">
-            <div><span>Nomor</span><b>: <span id="letterNumber">1.2/001/1448</span></b></div>
-            <div><span>Lampiran</span><b>: -</b></div>
-            <div><span>Perihal</span><b>: <u>Undangan Pengajian</u></b></div>
+          
+          <!-- Wrapper untuk perataan Nomor Surat (kiri) & Tanggal Surat (kanan) -->
+          <div class="letter-header-row" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
+            <div class="letter-meta">
+              <div><span>Nomor</span><b>: <span id="letterNumber">1.2/001/1448</span></b></div>
+              <div><span>Lampiran</span><b>: -</b></div>
+              <div><span>Perihal</span><b>: <u>Undangan Pengajian</u></b></div>
+            </div>
+            <div class="letter-date" style="text-align: right; margin-left: auto;">
+              <span id="letterIssueDate">Tembok Luwung, 09 Oktober 2026</span>
+            </div>
           </div>
+
           <p class="recipient">Kepada Yth.<br><strong id="recipientName">Rekan Pemuda Muhammadiyah Tembok Luwung</strong><br>Di<br><strong class="indent">Tempat</strong></p>
           <p class="greeting"><strong><em>Assalamualaikum Warahmatullahi Wabarakatuh</em></strong></p>
           <p class="letter-copy">Salam silaturahim teriring do’a, semoga rahmat, hidayah, dan taufiq dari Allah SWT senantiasa menyertai aktivitas kita sehari-hari. Shalawat serta salam tercurah kepada Baginda Nabi Muhammad SAW.</p>
@@ -130,6 +138,7 @@
     <p class="edit-hint">Perubahan langsung terlihat di halaman ini. Untuk mengganti informasi permanen bagi semua orang, ubah bagian EVENT di file <code>script.js</code> lalu unggah kembali ke GitHub.</p>
     <label>Nama penerima<input id="inputRecipient" value="Rekan Pemuda Muhammadiyah Tembok Luwung" placeholder="Nama penerima"></label>
     <label>Nomor surat<input id="inputNumber" value="1.2/002/1448"></label>
+    <label>Tanggal surat<input id="inputIssueDate" type="date"></label>
     <label>Tanggal acara<input id="inputDate" type="date" value="2026-10-09"></label>
     <label>Hari / keterangan hari<input id="inputDay" value="Jum’at Malam Sabtu"></label>
     <label>Waktu<input id="inputTime" value="Pukul 20.00 WIB s/d Selesai"></label>
