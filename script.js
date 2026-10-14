@@ -4,12 +4,13 @@
 // ================================================================
 const EVENT = {
   recipient: "Rekan Pemuda Muhammadiyah Tembok Luwung",
-  number: "1.2/003/1448",
-  date: "2026-10-24", // format YYYY-MM-DD
+  number: "1.2/002/1448",
+  issueDate: "2026-10-14", // Format YYYY-MM-DD untuk tanggal pembuatan/surat
+  date: "2026-10-14", // Format YYYY-MM-DD untuk tanggal pelaksanaan acara
   day: "Jum’at Malam Sabtu",
-  time: "Pukul 20.00 WIB s/d Selesai",
-  place: "Masjid Al Furqon (Kompleks TPQ Aisyiyah)",
-  speaker: "Ustadz Muhammad Lukman Hajir, S.Pd.",
+  time: "Pukul 20.15 WIB s/d Selesai",
+  place: "Masjid Al Hidayah Komplek Dagan",
+  speaker: "Ustadz Turachman, M.Pd.",
   theme: "",
   maps: "https://maps.app.goo.gl/mtDw4DMYSrbQkcqV6"
 };
@@ -30,6 +31,8 @@ function setText(id, value) { $(id).textContent = value || ""; }
 function render(data) {
   setText("recipientName", data.recipient || "Rekan Pemuda Muhammadiyah Tembok Luwung");
   setText("letterNumber", data.number);
+  // Render tanggal surat dengan format "Tembok Luwung, [Tanggal Bulan Tahun]"
+  setText("letterIssueDate", data.issueDate ? `Tembok Luwung, ${formatDate(data.issueDate)}` : "");
   setText("dayName", data.day);
   setText("eventDate", formatDate(data.date));
   setText("eventTime", data.time);
@@ -51,17 +54,29 @@ function safeUrl(value) {
 }
 function readForm() {
   return {
-    recipient:$("inputRecipient").value.trim(), number:$("inputNumber").value.trim(),
-    date:$("inputDate").value, day:$("inputDay").value.trim(), time:$("inputTime").value.trim(),
-    place:$("inputPlace").value.trim(), speaker:$("inputSpeaker").value.trim(),
-    theme:$("inputTheme").value.trim(), maps:$("inputMaps").value.trim()
+    recipient:$("inputRecipient").value.trim(), 
+    number:$("inputNumber").value.trim(),
+    issueDate:$("inputIssueDate").value, // Membaca input tanggal surat dari form
+    date:$("inputDate").value, 
+    day:$("inputDay").value.trim(), 
+    time:$("inputTime").value.trim(),
+    place:$("inputPlace").value.trim(), 
+    speaker:$("inputSpeaker").value.trim(),
+    theme:$("inputTheme").value.trim(), 
+    maps:$("inputMaps").value.trim()
   };
 }
 function fillForm(data) {
-  $("inputRecipient").value=data.recipient; $("inputNumber").value=data.number;
-  $("inputDate").value=data.date; $("inputDay").value=data.day; $("inputTime").value=data.time;
-  $("inputPlace").value=data.place; $("inputSpeaker").value=data.speaker;
-  $("inputTheme").value=data.theme; $("inputMaps").value=data.maps;
+  $("inputRecipient").value=data.recipient; 
+  $("inputNumber").value=data.number;
+  $("inputIssueDate").value=data.issueDate || ""; // Mengisi input tanggal surat di form
+  $("inputDate").value=data.date; 
+  $("inputDay").value=data.day; 
+  $("inputTime").value=data.time;
+  $("inputPlace").value=data.place; 
+  $("inputSpeaker").value=data.speaker;
+  $("inputTheme").value=data.theme; 
+  $("inputMaps").value=data.maps;
 }
 // Personalisasi penerima lewat link, contoh: ?untuk=Ahmad%20Fauzi
 const params = new URLSearchParams(window.location.search);
